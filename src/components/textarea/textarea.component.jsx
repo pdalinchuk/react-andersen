@@ -12,8 +12,7 @@ class TextArea extends React.Component {
           className='form-textarea'
           rows={this.props.rows}
           id={this.props.name}
-          placeholder={this.props.placeholder}
-        ></textarea>
+        />
       </div>
     );
   }
