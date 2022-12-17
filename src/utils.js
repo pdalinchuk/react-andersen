@@ -8,7 +8,16 @@ const trimInput = function (info) {
 
 export const validateForm = function (userInfo) {
   const trimmedUserInfo = trimInput(userInfo);
-  const { firstName, lastName, birthday, phone, url } = trimmedUserInfo;
+  const {
+    firstName,
+    lastName,
+    birthday,
+    phone,
+    url,
+    about,
+    technologies,
+    lastProject,
+  } = trimmedUserInfo;
   const formErrors = {};
 
   const regexPhone = /^[0-9]{1}[-]{1}[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
@@ -27,6 +36,12 @@ export const validateForm = function (userInfo) {
     formErrors.phone = 'Номер должен состоять из 12 символов!';
   if (url && !url.startsWith('https://'))
     formErrors.url = `Сайт должен начинаться с 'https://'!`;
+  if (about && about.trim().length > 600)
+    formErrors.about = 'Лимит превышен - удалите лишний текст!';
+  if (technologies && technologies.trim().length > 600)
+    formErrors.technologies = 'Лимит превышен - удалите лишний текст!';
+  if (lastProject && lastProject.trim().length > 600)
+    formErrors.lastProject = 'Лимит превышен - удалите лишний текст!';
 
   return { trimmedUserInfo, formErrors };
 };
