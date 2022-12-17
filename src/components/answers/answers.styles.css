@@ -1,0 +1,13 @@
+.content {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.content-value {
+  padding: 0.5rem 0rem;
+}

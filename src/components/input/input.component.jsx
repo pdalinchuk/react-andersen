@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorMessage from '../error-message/error-message.component';
 import './input.styles.css';
 
 class Input extends React.Component {
@@ -13,7 +14,10 @@ class Input extends React.Component {
           id={this.props.name}
           placeholder={this.props.placeholder}
           type={this.props.inputType}
+          value={this.props.value}
+          onChange={this.props.handleChange}
         />
+        {this.props.errorMsg && <ErrorMessage text={this.props.errorMsg} />}
       </div>
     );
   }

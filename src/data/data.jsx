@@ -2,13 +2,13 @@ const data = [
   {
     inputType: 'text',
     title: 'Имя',
-    name: 'name',
+    name: 'firstName',
     placeholder: 'Введите свое имя',
   },
   {
     inputType: 'text',
     title: 'Фамилия',
-    name: 'surname',
+    name: 'lastName',
     placeholder: 'Введите свою фамилию',
   },
   { inputType: 'date', title: 'Дата рождения', name: 'birthday' },
@@ -16,20 +16,34 @@ const data = [
     inputType: 'tel',
     title: 'Телефон',
     name: 'phone',
-    placeholder: '+375 (ХХ) ХХХ-ХХ-ХХ',
+    placeholder: '7-7777-77-77',
   },
-  { title: 'О себе', name: 'about', rows: 7, placeholder: 'Расскажите о себе' },
+  {
+    inputType: 'url',
+    title: 'Сайт',
+    name: 'url',
+    placeholder: 'https://ru.reactjs.org',
+  },
+  {
+    title: 'О себе',
+    name: 'about',
+    rows: 7,
+    placeholder: 'Расскажите о себе',
+    maxlength: 600,
+  },
   {
     title: 'Стек технологий',
     name: 'technologies',
     rows: 7,
     placeholder: 'HTML5, CSS3, JavaScript...',
+    maxlength: 600,
   },
   {
     title: 'Описание последнего проекта',
-    name: 'last_project',
+    name: 'lastProject',
     rows: 7,
     placeholder: 'Опишите ваш последний проект',
+    maxlength: 600,
   },
 ];
 
