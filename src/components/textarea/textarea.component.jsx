@@ -13,7 +13,7 @@ const TextArea = (props) => {
     errorMsg,
   } = props;
 
-  const defineMessage = function (maxlength, value) {
+  const defineMessage = (maxlength, value) => {
     const residual = maxlength - value.trim().length;
     return residual < 0
       ? 'Превышен лимит символов в поле!'

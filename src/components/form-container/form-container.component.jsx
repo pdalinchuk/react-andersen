@@ -54,47 +54,43 @@ const FormContainer = () => {
       setFormValid(true);
   };
 
-  return (
+  return !formValid ? (
     <>
-      {!formValid ? (
-        <>
-          <Header title='Создание анкеты' />
-          <form className='form-container'>
-            {data.map((element, index) => {
-              const { inputType, title, name, placeholder, rows, maxlength } =
-                element;
-              return !rows ? (
-                <Input
-                  key={index}
-                  inputType={inputType}
-                  title={title}
-                  name={name}
-                  placeholder={placeholder}
-                  value={userInfo[name]}
-                  handleChange={handleValues}
-                  errorMsg={formErrors[name]}
-                />
-              ) : (
-                <TextArea
-                  key={index}
-                  title={title}
-                  name={name}
-                  rows={rows}
-                  placeholder={placeholder}
-                  maxlength={maxlength}
-                  value={userInfo[name]}
-                  handleChange={handleValues}
-                  errorMsg={formErrors[name]}
-                />
-              );
-            })}
-            <ButtonsContainer handleForm={handleForm} />
-          </form>
-        </>
-      ) : (
-        <Answers userInfo={userInfo} />
-      )}
+      <Header title='Создание анкеты' />
+      <form className='form-container'>
+        {data.map((element, index) => {
+          const { inputType, title, name, placeholder, rows, maxlength } =
+            element;
+          return !rows ? (
+            <Input
+              key={index}
+              inputType={inputType}
+              title={title}
+              name={name}
+              placeholder={placeholder}
+              value={userInfo[name]}
+              handleChange={handleValues}
+              errorMsg={formErrors[name]}
+            />
+          ) : (
+            <TextArea
+              key={index}
+              title={title}
+              name={name}
+              rows={rows}
+              placeholder={placeholder}
+              maxlength={maxlength}
+              value={userInfo[name]}
+              handleChange={handleValues}
+              errorMsg={formErrors[name]}
+            />
+          );
+        })}
+        <ButtonsContainer handleForm={handleForm} />
+      </form>
     </>
+  ) : (
+    <Answers userInfo={userInfo} />
   );
 };
 

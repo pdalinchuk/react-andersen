@@ -1,4 +1,4 @@
-const trimInput = function (info) {
+const trimInput = (info) => {
   const userInfo = {};
   for (const [key, value] of Object.entries(info)) {
     userInfo[key] = value.trim();
@@ -6,7 +6,7 @@ const trimInput = function (info) {
   return userInfo;
 };
 
-export const validateForm = function (userInfo) {
+export const validateForm = (userInfo) => {
   const trimmedUserInfo = trimInput(userInfo);
   const {
     firstName,
