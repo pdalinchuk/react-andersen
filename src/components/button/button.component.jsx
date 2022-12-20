@@ -8,6 +8,7 @@ class Button extends React.Component {
         className={`btn ${
           this.props.type === 'clear' ? 'btn-clear' : 'btn-submit'
         }`}
+        onClick={this.props.onClick}
       >
         {this.props.text}
       </button>
