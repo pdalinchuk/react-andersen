@@ -1,4 +1,4 @@
-const trimInput = function (info) {
+const trimInput = (info) => {
   const userInfo = {};
   for (const [key, value] of Object.entries(info)) {
     userInfo[key] = value.trim();
@@ -6,7 +6,7 @@ const trimInput = function (info) {
   return userInfo;
 };
 
-export const validateForm = function (userInfo) {
+export const validateForm = (userInfo) => {
   const trimmedUserInfo = trimInput(userInfo);
   const {
     firstName,
@@ -33,7 +33,8 @@ export const validateForm = function (userInfo) {
   if (birthday && Date.now() < Date.parse(birthday))
     formErrors.birthday = 'Дата рождения должна быть раньше текущей!';
   if (phone && !regexPhone.test(phone))
-    formErrors.phone = 'Номер должен состоять из 12 символов!';
+    formErrors.phone =
+      'Номер должен состоять из 12 символов формата 7-7777-77-77!';
   if (url && !url.startsWith('https://'))
     formErrors.url = `Сайт должен начинаться с 'https://'!`;
   if (about && about.trim().length > 600)
